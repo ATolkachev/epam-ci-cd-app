@@ -1,15 +1,20 @@
 pipeline {
     agent any
-    
+    parameters{
+	     string( defaultValue: '', name: 'branch', description: 'Branch')
+    }
+	    
     stages {
         stage('Ls') {
             steps {
-                sh 'ls'
+		    checkout scm: [$class: 'GitSCM', source: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', clean: true, credentialsId: 'atolkachev', branches: [[name: "${env.branch}"]]], poll: false
+
+		    //git branch: "${env.branch}", url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev'
             }
         }
-	stage('Ls -la') {
+	stage('git') {
             steps {
-                sh 'ls -la'
+                sh 'git status'
             }
         }
     }
