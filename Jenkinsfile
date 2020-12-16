@@ -1,5 +1,11 @@
+
+
 pipeline {
     agent any
+	
+environment {
+        gitBranch = scm.branches[0].toString().replace('*/','')
+}
     
     stages {
         stage('Ls') {
@@ -12,5 +18,12 @@ pipeline {
                 sh 'ls -la'
             }
         }
+	    stage('env'){
+		    steps {
+			    script {
+				    echo "${env.gitBranch}_${BUILD_NUMBER}"
+			    }
+		    }
+	    }
     }
 }
