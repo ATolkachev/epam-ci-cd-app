@@ -11,7 +11,7 @@ pipeline {
 			expression {return 'run' in env.actions.split(',')}
 		}
             steps {
-		    checkout scm: [$class: 'GitSCM', source: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', clean: true, credentialsId: 'git', branches: [[name: "${env.branch}"]]], poll: false
+		    checkout scm: [$class: 'GitSCM', source: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', clean: true, credentialsId: 'atolkachev', branches: [[name: "${env.branch}"]]], poll: false
 
 		    //git branch: "${env.branch}", url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev'
             }
