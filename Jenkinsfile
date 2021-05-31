@@ -16,6 +16,7 @@ environment {
 	stage('Ls -la') {
             steps {
                 sh 'ls -la'
+		echo "I'm new on the block"
             }
         }
 	    stage('env'){
