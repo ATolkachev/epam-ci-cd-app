@@ -8,7 +8,7 @@ pipeline {
     stage('Docker Build') {
       steps {
 	container('sonar') {
-        	sh "sonar-scanner   -Dsonar.projectKey=epam-cicd   -Dsonar.sources=."
+        	sh "sonar-scanner   -Dsonar.projectKey=epam-cicd-school-16   -Dsonar.sources=."
 	}
       }
     }
