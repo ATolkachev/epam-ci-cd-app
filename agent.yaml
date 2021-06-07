@@ -7,9 +7,9 @@ spec:
     image: sonarsource/sonar-scanner-cli:latest
     env:
       - name: SONAR_HOST_URL
-        value: http://35.228.113.185:9000
+        value: http://34.88.236.161:9000
       - name: SONAR_LOGIN
-        value: d2420b21acef08ad68e4d06c3cd4e4978355731a
+        value: 9e039429cf515b5c560fa20ca3ae52e1b0b293fc
   - name: jnlp
     env:
     - name: CONTAINER_ENV_VAR
