@@ -24,5 +24,9 @@ pipeline {
                 sh 'git status'
             }
         }
+	    stage('New'){
+		    steps {
+			    sh('This is for you, my lovely students!')
+	    }
     }
 }
