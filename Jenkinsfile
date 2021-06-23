@@ -26,7 +26,7 @@ pipeline {
         }
 	    stage('New'){
 		    steps {
-			    sh('This is for you, my lovely students!')
+			    sh('echo "This is for you, my lovely students!"')
 	    	}
 		}
     }
