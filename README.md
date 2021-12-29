@@ -1,2 +1,2 @@
 To build package run:
-`python3.6 setup.py bdist_egg`
+`python3.6 setup.py bdist_wheel`
