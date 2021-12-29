@@ -1,7 +1,9 @@
 
 
 pipeline {
-    agent any
+	agent {
+		label master
+	}
 	
 environment {
         gitBranch = scm.branches[0].toString().replace('*/','')
