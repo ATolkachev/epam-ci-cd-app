@@ -8,7 +8,7 @@ pipeline {
     stage('Docker Build') {
       steps {
 	container('docker') {
-        	sh "docker build $WORKSPACE -t nexus:8086/testapp/testapp:${env.BUILD_NUMBER} "
+        	sh "docker build $WORKSPACE -t nexus:8086/devops/testapp:${env.BUILD_NUMBER} "
 	}
       }
     }
