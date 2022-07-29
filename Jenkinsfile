@@ -11,9 +11,9 @@ pipeline {
 			expression {return 'run' in env.actions.split(',')}
 		}
             steps {
-		    checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev']], branches: [[name: "${env.branch}"]]], poll: false
+		    //checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev']], branches: [[name: "${env.branch}"]]], poll: false
 
-		    //git branch: "${env.branch}", url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev'
+		    git branch: "${env.branch}", url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev'
             }
         }
 	stage('git') {
