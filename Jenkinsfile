@@ -13,7 +13,7 @@ pipeline {
             steps {
 		    //checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git', credentialsId: 'atolkachev']], branches: [[name: "${env.branch}"]]], poll: false
 
-		    git branch: "${env.branch}", url: 'ssh://git@github.com/ATolkachev/epam-ci-cd-app.git'
+		    git branch: "${env.branch}", url: 'https://github.com/ATolkachev/epam-ci-cd-app.git'
             }
         }
 	stage('git') {
