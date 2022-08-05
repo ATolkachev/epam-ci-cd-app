@@ -2,6 +2,7 @@ pipeline {
   agent {
     label 'docker'
   }
+  parameters { booleanParam(name: 'DEPLOY', defaultValue: false, description: 'Deploy after CI') }
   stages {
     stage('Docker Build') {
       steps {
@@ -13,6 +14,9 @@ pipeline {
     stage('Deploy') {
       steps {
         build job: 'first_multibranch/Demo-CD', parameters: [string(name: 'IMAGE_TAG', value: "testapp:${env.BUILD_ID}")]
+      }
+      when {
+        environment name: 'DEPLOY', value: true
       }
     }
 		  
