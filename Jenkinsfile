@@ -16,7 +16,8 @@ pipeline {
     stage('Docker Run') {
       steps {
 	script {
-        	sh "docker run -p5000:5000 ${env.IMAGE_TAG} &"
+		sh "docker container create container_${env.BUILD_ID} ${env.IMAGE_TAG}"
+        	sh "docker start container_${env.BUILD_ID}"
 	}
       }
     }
