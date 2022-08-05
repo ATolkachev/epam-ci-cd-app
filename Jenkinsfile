@@ -9,7 +9,7 @@ pipeline {
     stage('Docker Stop') {
       steps {
 	script {
-	  sh "docker ps | grep -v ID | awk '{print $1}' | xargs docker kill"
+	  sh "docker ps | grep -v ID | awk '{print \$1}' | xargs docker kill"
 	}
       }
     }
