@@ -3,7 +3,6 @@ pipeline {
     label 'docker'
   }
   parameters {
-	  booleanParam(name: 'DEPLOY', defaultValue: false, description: '')
 	  string(name: 'IMAGE_TAG', defaultValue: 'None', description: '')
   }
   stages {
