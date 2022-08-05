@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Docker Build') {
       steps {
-	container('docker') {
+	script {
         	sh "docker build $WORKSPACE -t testapp:${env.BUILD_NUMBER} "
 	}
       }
