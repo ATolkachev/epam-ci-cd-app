@@ -15,7 +15,7 @@ pipeline {
       steps {
         build job: 'first_multibranch/Demo-CD', parameters: [string(name: 'IMAGE_TAG', value: "testapp:${env.BUILD_ID}")]
       }
-      when { equals expected: true, actual: env.DEPLOY }
+      when { expression { return env.DEPLOY }} 
     }
 		  
   }
