@@ -10,5 +10,11 @@ pipeline {
 	}
       }
     }
+    stage('Deploy') {
+      steps {
+        build job: 'first_multibranch/Demo-CD', parameters: [string(name: 'IMAGE_TAG', value: 'testapp:${env.BUILD_ID}')]
+      }
+    }
+		  
   }
 }
